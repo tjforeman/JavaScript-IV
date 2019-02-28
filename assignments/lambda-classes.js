@@ -23,6 +23,11 @@ class Person{
       grade(student,subject){
         return `${student.name} receives a perfect score on ${subject}`
       }
+      grader(student){
+          let grade=student.grade
+          const sprint= Math.random()
+          return `${student.name}'s grade is${student.grade += sprint}`
+      }
     }
     class Student extends Person{
         constructor(StudentAttributes){
@@ -30,6 +35,7 @@ class Person{
         this.previousBackground = StudentAttributes.previousBackground;
       this.classname = StudentAttributes.classname;
       this.favSubjects=StudentAttributes.favSubjects;
+      this.grade=StudentAttributes.grade;
         }
         listsSubjects(){
             return this.favSubjects;
@@ -40,7 +46,16 @@ class Person{
         sprintchallenge(student,subject){
             return `${student.name} has begun sprint challenge on ${subject}`
         }
-      }
+        graduate(student){
+            let Studentgrade=this.grade;
+            if (Studentgrade> 70){
+            return `Congratulations ${this.name} you've graduated from Lambda school! `
+        }else{
+            return grader(student)
+       
+        }
+    }
+}
       class ProjectManager extends Instructor{
         constructor(ProjectManagerAttributes){
         super(ProjectManagerAttributes);
@@ -92,7 +107,8 @@ class Person{
         gender: 'male',
         previousBackground: 'cook',
         classname: 'web-18',
-        favSubjects: ["html","css"]
+        favSubjects: ["html","css"],
+        grade:100
       });
       const sierra = new Student({
         name: 'Sierra',
@@ -101,7 +117,8 @@ class Person{
         gender: 'female',
         previousBackground: 'customer service',
         classname: 'cs-12',
-        favSubjects: ["react","angular"]
+        favSubjects: ["react","angular"],
+        grade:85
       });
       const mary = new Student({
         name: 'Mary',
@@ -110,7 +127,8 @@ class Person{
         gender: 'female',
         previousBackground: 'waitress',
         classname: 'IOS-4',
-        favSubjects: ["javascript","c++"]
+        favSubjects: ["javascript","c++"],
+        grade:68
       });
       const mark = new ProjectManager({
         name: 'Mark',
@@ -151,6 +169,9 @@ class Person{
       console.log(sierra.sprintchallenge(jim,"react"));
       console.log(sarah.standup("web-18-sarah"));
       console.log(mark.codeDebug(mary,"angular"))
+      console.log(dwight.grader(mary))
+      console.log(jim.graduate())
+      console.log(mary.graduate())
 
 
 
