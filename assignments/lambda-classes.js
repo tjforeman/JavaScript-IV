@@ -34,8 +34,8 @@ class Person{
         listsSubjects(){
             return this.favSubjects;
         }
-        PRAssignment(student,subject){
-          return `${student.name} has submitted a PR for ${subject}`;
+        PRAssignment(subject){
+          return `${this.name} has submitted a PR for ${subject}`;
         }
         sprintchallenge(student,subject){
             return `${student.name} has begun sprint challenge on ${subject}`
@@ -47,11 +47,11 @@ class Person{
         this.gradClassName = ProjectManagerAttributes.gradClassName;
       this.favInstructor = ProjectManagerAttributes.favInstructor;
         }
-        standup(name,channel){
-            return `${projectManger.name} announces to ${channel}, @channel standy times!​​​​​`;
+        standup(channel){
+            return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
         }
-        codeDebug(name,student,subject){
-          return `${name} debugs ${student.name}'s code on ${subject}`
+        codeDebug(student,subject){
+          return `${this.name} debugs ${student.name}'s code on ${subject}`
         }
       }
 
@@ -145,7 +145,14 @@ class Person{
       console.log(sierra.classname);
       console.log(jill.specialty);
       console.log(jill.demo('javascript'));
-      console.log(fred.grade(sierra,"CSS"))
+      console.log(fred.grade(sierra,"CSS"));
+      console.log(mary.listsSubjects());
+      console.log(jim.PRAssignment("javascript"));
+      console.log(sierra.sprintchallenge(jim,"react"));
+      console.log(sarah.standup("web-18-sarah"));
+      console.log(mark.codeDebug(mary,"angular"))
+
+
 
 
 
